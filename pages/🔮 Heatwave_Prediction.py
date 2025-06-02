@@ -19,12 +19,12 @@ with st.expander("🧮 Enter Meteorological Inputs"):
     with col1:
         T2M_MAX = st.number_input("🌡️ T2M_MAX (°C)", 20.0, 50.0, 42.0, help="Max temperature in Celsius")
         RH2M = st.number_input("💧 RH2M (%)", 0.0, 100.0, 40.0, help="Relative Humidity at 2 meters height")
+        T2M_MAX_7D = st.number_input("📊 T2M_MAX_7D (°C)", 20.0, 50.0, 40.0, help="7-day average max temperature")
     with col2:
         RH2M_7D = st.number_input("💧 RH2M_7D (%)", 0.0, 100.0, 42.0, help="7-day average RH2M")
         PRECTOTCORR_7D = st.number_input("🌧️ 7D Total Precip (mm)", 0.0, 100.0, 5.0, help="7-day total precipitation")
+        T2M_MAX_14D = st.number_input("📊 T2M_MAX_14D (°C)", 20.0, 50.0, 38.5, help="14-day average max temperature")
 
-    T2M_MAX_7D = st.slider("📊 T2M_MAX_7D", 20.0, 50.0, 40.0)
-    T2M_MAX_14D = st.slider("📊 T2M_MAX_14D", 20.0, 50.0, 38.5)
 
 Heat_Index = (0.5 * (T2M_MAX + 61.0 + ((T2M_MAX - 68.0) * 1.2) + (RH2M * 0.094)))+5
 st.markdown(f"""
