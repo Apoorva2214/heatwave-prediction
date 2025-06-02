@@ -26,7 +26,7 @@ with st.expander("🧮 Enter Meteorological Inputs"):
     T2M_MAX_7D = st.slider("📊 T2M_MAX_7D", 20.0, 50.0, 40.0)
     T2M_MAX_14D = st.slider("📊 T2M_MAX_14D", 20.0, 50.0, 38.5)
 
-Heat_Index = 0.5 * (T2M_MAX + 61.0 + ((T2M_MAX - 68.0) * 1.2) + (RH2M * 0.094))
+Heat_Index = (0.5 * (T2M_MAX + 61.0 + ((T2M_MAX - 68.0) * 1.2) + (RH2M * 0.094)))+5
 st.markdown(f"""
 <div style="
     background: #ffdddd;
